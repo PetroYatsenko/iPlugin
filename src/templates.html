@@ -1,0 +1,60 @@
+<script type="text/x-handlebars-template" id="card_tpl">
+    <div class="frame" style="width:{{frameWidth}}px;height:{{frameHeight}}px;"><img style="top:{{topRegion}}px; left:{{leftRegion}}px" src='{{img}}'/></div>
+    </div>
+    <div class="well">
+      <button type="button" class="btn btn-success btn-lg btn-block save_card">Save changes</button>
+    </div>
+</script> 
+<script type="text/x-handlebars-template" id="document_block_tpl">
+    <div class="document_block_wrapper" style="left:{{left}}px; top:{{top}}px;">
+    <div class="document_block" data-id="{{id}}">
+    <div class="document_content" contenteditable="true" style="font-size:{{fontSize}}px; 
+    color:rgb({{fontColor}}); font-family:{{fontFamily}}; 
+    {{#each textStyle}} {{checkTextStyle this}} {{/each}}">{{{content}}}</div>
+    </div>
+    </div>
+</script>
+<script type="text/x-handlebars-template" id="editor_toolbar_tpl">
+    <div class="editor-toolbar">
+    <div class="btn-group">
+    <button id="editorToolbarFont" type="button" class="btn btn-default btn-sm dropdown-toggle" data-toggle="dropdown">
+    <span class="font-box" data-font="{{defaultFont}}">{{defaultFont}}</span>
+    <span class="glyphicon glyphicon-font"></span>
+    <span class="caret"></span>
+    </button>
+    <ul class="dropdown-menu" aria-labelledby="editorToolbarFont" role="menu">
+    {{#each fonts}}
+    <li class="font-item" role="presentation" data-font="{{@key}}" style="font-family:{{@key}}">{{@key}}</li>
+    {{/each}}
+    </ul>
+    </div>    
+    <div class="btn-group">    
+    <button id="editorToolbarColor" type="button" class="btn btn-default btn-sm dropdown-toggle" data-toggle="dropdown">
+    <span class="color-box" data-color="{{defaultColorName}}" style="background-color:rgb({{defaultColor}});display:inline-block;width:12px;height:12px;"></span>
+    <span class="glyphicon glyphicon-tint"></span>
+    <span class="caret"></span>
+    </button>
+    <ul class="dropdown-menu color_dropdown" aria-labelledby="editorToolbarColor" role="menu">
+    {{#each colors}}
+    <li role="presentation"><button  type="button" class="btn btn-default btn-sm color-item" data-background="{{this}}" data-color="{{@key}}" style="background-color:rgb({{this}});"></li>
+    {{/each}}
+    </ul> 
+    </div>  
+    </div>
+</script>
+<script type="text/x-handlebars-template" id="modal_dialog_tpl">
+    <div class="modal fade" id="modifiedXML" style="-webkit-overflow-scrolling:touch" tabindex="-1" role="dialog" aria-labelledby="changed XML" aria-hidden="true">
+    <div class="modal-dialog">
+    <div class="modal-content">
+    <div class="modal-header">
+    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+    <h4 class="modal-title" id="modifiedXMLLabel">Modified xml</h4>
+    </div>
+    <div class="modal-body"><pre class="brush: xml; toolbar: false;">{{content}}</pre></div>
+    <div class="modal-footer">
+    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+    </div>
+    </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+    </div>
+</script>

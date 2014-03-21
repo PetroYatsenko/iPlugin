@@ -1,0 +1,48 @@
+<ProductSettings CustomerOrderDetailsID="2447627" ProductSKU="SI114" CurrentStepID="1" AltWordList="4" HideProofOptions="N" EnforceSingleColor="N" MatchFontAndColor="N" Compositing="N" ID="3460" AtLeastOneAttributeOrAliasFound="True" DesignDate="1/10/2014 9:17:09 PM" SingleFile="N" ProductType="RISO">
+<ProoferOptions Option="Changes Permitted" Initials="jg" InitialDate="01-10-2014 06:17">
+<Comments/>
+</ProoferOptions>
+<AvailableColors AllowMultiColor="N" MaxColors="1" ColorType="Riso" AllowBold="Y" AllowItalic="Y" AllowUnderline="Y" ColorSet="Backing Card" DefaultColor="Medium Blue">
+<Color Name="Black" RGB="0,0,0"/>
+<Color Name="Medium Blue" RGB="20,68,141"/>
+<Color Name="Red" RGB="210,16,52"/>
+</AvailableColors>
+<AvailableFonts>
+<Font Name="Cancellaresca" TTF="Cancellaresca-03-17-2011.ttf" LineHeightMultiplier="0.980" FontMultiplier="19" AllowBold="Y" AllowItalic="Y" AllowUnderline="Y" LeadingMultiplier="1.050000000000" BaselineMultiplier="0.715033350759"/>
+<Font Name="Champagne" TTF="cac_champagne.ttf" LineHeightMultiplier="1.000" FontMultiplier="21" AllowBold="Y" AllowItalic="Y" AllowUnderline="Y" LeadingMultiplier="1.100000000000" BaselineMultiplier="0.770000000000"/>
+<Font Name="Chopin" TTF="Chopin.TTF" LineHeightMultiplier="0.950" FontMultiplier="17" AllowBold="Y" AllowItalic="Y" AllowUnderline="Y" LeadingMultiplier="1.345669105000" BaselineMultiplier="0.922524699977"/>
+</AvailableFonts>
+<Document NumBlocks="3" ID="3565" PrintDPI="300" IncludeBackgroundImage="N" ColorSet="Backing Card" PrintSize="5.25,7.5" PrintImage="" Name="SI114" FlipImageForPrint="N">
+<Region Name="SI114" AnimationKey="SI114" ID="3940" Sequence="1" Optional="N" Opt-In="" ViewedStep="Y" Price="1.79" WebImage="https://rendering.storkie.com/assets/WebImages/2447627.SI114.3565.png" HideShadow="N">
+<PrintSettings DocumentRegion="0,0,1575,2250" PrintableArea="38,38,1538,2212"/>
+<WebSettings DocumentRegion="0,0,377,539" PrintableArea="10,10,369,530" WebScalingFactor="0.239365079365079"/>
+<PreviewSettings DocumentRegion="87,0,507,600" PrintableArea="11,11,411,590" PreviewScalingFactor="0.266666666666667" PreviewAngle="0" PreviewImage="https://rendering.storkie.com/assets/PreviewImages/2447627.SI114.png"/>
+<Block BlockShift="N" SkipPreview="N" ID="240081" BlockAngle="0" Type="Text" Sequence="1" KitOptionGroup="">
+<Text Kerning="0" TextJustification="Center" FontFace="Champagne" FontSize="19.000" FontColor="Medium Blue" Bold="Y" Italic="Y" Underline="N" LineHeight="17.218" AltWordList="4">
+<PrintSettings TextPosition="803.166445623343,1361.97322550407"/>
+<WebSettings TextPosition="192.25,326.008829215894"/>
+<PreviewSettings TextPosition="214.177718832892,363.192860134419"/>
+<![CDATA[ Join us for a Baby Shower in honor of ]]>
+</Text>
+</Block>
+<Block BlockShift="N" SkipPreview="N" ID="240083" BlockAngle="0" Type="Text" Sequence="2" KitOptionGroup="">
+<Text Kerning="0" TextJustification="Center" FontFace="Chopin" FontSize="24.000" FontColor="Medium Blue" Bold="N" Italic="N" Underline="N" LineHeight="27.692" AltWordList="4">
+<PrintSettings TextPosition="802.122015915121,1595.92548014598"/>
+<WebSettings TextPosition="192,382.008829215894"/>
+<PreviewSettings TextPosition="213.899204244032,425.580128038928"/>
+<![CDATA[ Jennifer: & ’Smith’ ]]>
+</Text>
+</Block>
+<Block BlockShift="N" SkipPreview="N" ID="240085" BlockAngle="0" Type="Text" Sequence="3" KitOptionGroup="">
+<Text Kerning="0" TextJustification="Center" FontFace="Cancellaresca" FontSize="20.000" FontColor="Medium Blue" Bold="Y" Italic="N" Underline="N" LineHeight="20.714" AltWordList="4">
+<PrintSettings TextPosition="802.122015915121,919.135029217596"/>
+<WebSettings TextPosition="192,220.008829215894"/>
+<PreviewSettings TextPosition="213.899204244032,245.102674458026"/>
+<![CDATA[
+Tiny fingers, tiny toes, Little itty-bitty clothes Football, baseball, lots of toys Guess what. . .It’s a Boy!
+]]>
+</Text>
+</Block>
+</Region>
+</Document>
+</ProductSettings>
