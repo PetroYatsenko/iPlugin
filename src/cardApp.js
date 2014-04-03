@@ -33,6 +33,7 @@
                 });
             });
         },
+        
         /**
          * handle response
          * @param {Object} data card data XML
@@ -64,20 +65,22 @@
                 blocks = $document.find('Block');
 
             var template = Handlebars.compile($('#card_tpl').html());
-            var documentRegion = self._getDocumentRegion(region.find('WebSettings').getAttributes());
+            var documentRegion = self
+                ._getDocumentRegion(region.find('WebSettings').getAttributes());
 
             $(this.element).addClass('cardApp');
             
-            //set background image
+            // set background image
             $(this.element).html(template({
                 img: regionAttr.WebImage,
                 frameWidth: documentRegion.width,
                 frameHeight: documentRegion.height,
                 topRegion: documentRegion.top,
-                leftRegion: documentRegion.left}));
+                leftRegion: documentRegion.left
+              }));
 
 
-            //init document blocks
+            // init document blocks
             blocks.each(function() {
                 self.initDocumentBlock($(this), documentRegion);
             });
@@ -121,6 +124,7 @@
                 dialog.remove();
             });
         },
+                
         /**
          * Prepare changed card data for saving
          * @returns {undefined}
@@ -142,6 +146,7 @@
             });
             return (new XMLSerializer()).serializeToString(card_data[0]);;
         },
+
         /**
          * Init document block
          * @param {type} $block
@@ -150,10 +155,10 @@
         initDocumentBlock: function(block, documentRegion) {
             var self = this,
                 options = self.options,
-                    textPosition = self._getTextPosition(block),
-                    blockAttr = block.getAttributes(),
-                    text = block.find('Text'),
-                    textAttr = text.getAttributes();
+                textPosition = self._getTextPosition(block),
+                blockAttr = block.getAttributes(),
+                text = block.find('Text'),
+                textAttr = text.getAttributes();
 
             var template = Handlebars.compile($('#document_block_tpl').html());
 
@@ -163,7 +168,7 @@
                 fontSize: textAttr.FontSize,
                 fontColor: self.product.colors[textAttr.FontColor],
                 left: 0,
-                top: textPosition['top'],
+                top: textPosition['top']/documentRegion.height * 100,
                 fontFamily: textAttr.FontFace,
                 textStyle: [
                     {styleAttribute: 'text-decoration', value: 'underline', flag: textAttr.Underline},
@@ -179,8 +184,13 @@
                 blockText: text
             };
 
-            self.initDocumentEditor($(this.element).find('.document_block[data-id=' + blockAttr.ID + ']'), documentOptions);
+            self.initDocumentEditor(
+               $(this.element)
+               .find('.document_block[data-id=' + blockAttr.ID + ']'),
+               documentOptions
+            );
         },
+                
         /**
          * Create array[colorName=>rgbValue] of colors from card XML
          */
@@ -191,6 +201,7 @@
                 self.product.colors[ $(this).attr('Name') ] = $(this).attr('RGB');
             });
         },
+                
         /**
          * Create array[fontName=>pathToFont] of fonts from card XML
          */
@@ -208,26 +219,33 @@
                 //});
 
                 var font_style = "@font-face {\n\
-                               font-family: '" + font_name + "'; \n\
-                               src: url('" + self.options.fontsBasePath + ttf + "')  format('truetype');\n\
-                              };";
-                $('head').append(('<style type="text/css">' + font_style + '</style>'));
+                    font-family: '" + font_name + "'; \n\
+                    src: url('" + self.options.fontsBasePath + ttf + "')  \n\
+                    format('truetype');\n\};";
+                $('head')
+                .append(('<style type="text/css">' + font_style + '</style>'));
             });
 
         },
+                
         /**
          * Return text postion
          */
         _getTextPosition: function(block) {
             var position = block.find('WebSettings').attr('TextPosition').split(',');
-            return {left: position[0], top: position[1]};
+            return {
+                left: position[0],
+                top: position[1]
+            };
         },
+                
         /**
          * Show Editor toolbar
          */
         _showEditorToolbar: function(doc) {
             doc.find('.editor-toolbar').show();
         },
+                
         /**
          * Hide editor toolbar 
          */
@@ -258,28 +276,34 @@
                 var selectedColor = $(this).data('background');
                 var colorName = $(this).data('color');
                 var colorGroup = $(this).parents('.btn-group');
-                colorGroup.find('.color-box').css({'background-color': 'rgb(' + selectedColor + ')'}).attr('data-color', colorName);
-                $(e.delegateTarget).find('.document_content').css({'color': 'rgb(' + selectedColor + ')'});
+                colorGroup.find('.color-box')
+                .css({'background-color': 'rgb(' + selectedColor + ')'})
+                .attr('data-color', colorName);
+                $(e.delegateTarget).find('.document_content')
+                .css({'color': 'rgb(' + selectedColor + ')'});
             })
             .on('click', '.font-item', function(e) {
                 var selectedFont = $(this).data('font');
                 var fontGroup = $(this).parents('.btn-group');
-                $(e.delegateTarget).find('.font-box').attr('data-font', selectedFont).text(selectedFont);
-                $(e.delegateTarget).find('.document_content').css({'font-family': selectedFont});
+                $(e.delegateTarget).find('.font-box')
+                .attr('data-font', selectedFont).text(selectedFont);
+                $(e.delegateTarget).find('.document_content')
+                .css({'font-family': selectedFont});
             });
         },
+                
         /**
          * Return region position
          * @param {type} regionAttr - region attributes
          */
         _getDocumentRegion: function(regionAttr) {
             var documentRegion = regionAttr.DocumentRegion.split(','),
-                    regionPosition = {
-                width: documentRegion[2] - documentRegion[0],
-                height: documentRegion[3] - documentRegion[1],
-                top: documentRegion[0],
-                left: documentRegion[1]
-            }
+                regionPosition = {
+                    width: documentRegion[2] - documentRegion[0],
+                    height: documentRegion[3] - documentRegion[1],
+                    top: documentRegion[0],
+                    left: documentRegion[1]
+                }
             return regionPosition;
         }
     }
