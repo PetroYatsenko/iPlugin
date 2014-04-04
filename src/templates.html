@@ -25,7 +25,7 @@
             </button>
             <ul class="dropdown-menu" aria-labelledby="editorToolbarFont" role="menu">
                 {{#each fonts}}
-                <li class="font-item" role="presentation" data-font="{{@key}}" style="font-family:{{@key}}">{{@key}}</li>
+                    <li class="font-item" role="presentation" data-font="{{@key}}" style="font-family:{{@key}}">{{@key}}</li>
                 {{/each}}
             </ul>
         </div>
@@ -37,19 +37,24 @@
             </button>
             <ul class="dropdown-menu color_dropdown" aria-labelledby="editorToolbarColor" role="menu">
                 {{#each colors}}
-                <li role="presentation"><button  type="button" class="btn btn-default btn-sm color-item" data-background="{{this}}" data-color="{{@key}}" style="background-color:rgb({{this}});"></li>
+                    <li role="presentation"><button type="button" class="btn btn-default btn-sm color-item" data-background="{{this}}" data-color="{{@key}}" style="background-color:rgb({{this}});"></li>
                 {{/each}}
             </ul>
         </div>
         <div class="btn-group">
-            <button id="editorToolbarAlign" type="button" class="btn btn-default btn-sm dropdown-toggle" data-toggle="dropdown">
-                <span class="align-box" data-align="{{defaultAlignName}}" style="background-color:rgb({{defaultColor}});display:inline-block;width:12px;height:12px;"></span>
-                <span class="glyphicon glyphicon-tint"></span>
+            <button id="editorToolbarAlignLeft" type="button" class="btn btn-default btn-align-left"></button>
+            <button id="editorToolbarAlignCenter" type="button" class="btn btn-default btn-align-center"></button>
+            <button id="editorToolbarAlignRight" type="button" class="btn btn-default btn-align-right"></button>
+        </div>
+        <div class="btn-group">
+            <button id="editorToolbarTextSize" type="button" class="btn btn-default btn-sm dropdown-toggle" data-toggle="dropdown">
+                <span class="color-box" data-size="{{defaultTextSize}}">{{defaultTextSize}}</span>
+                <span class="glyphicon glyphicon-size"></span>
                 <span class="caret"></span>
             </button>
-            <ul class="dropdown-menu color_dropdown" aria-labelledby="editorToolbarColor" role="menu">
-                {{#each colors}}
-                <li role="presentation"><button  type="button" class="btn btn-default btn-sm color-item" data-background="{{this}}" data-color="{{@key}}" style="background-color:rgb({{this}});"></li>
+            <ul class="dropdown-menu font_size_dropdown" aria-labelledby="editorTextSize" role="menu">
+                {{#each sizes}}
+                    <li class="size-item" role="presentation" data-size="{{@key}}" style="font-fbackground-color:rgb({{this}});">{{@size}}</li>
                 {{/each}}
             </ul>
         </div>
