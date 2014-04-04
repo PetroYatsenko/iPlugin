@@ -37,7 +37,9 @@
             </button>
             <ul class="dropdown-menu color_dropdown" aria-labelledby="editorToolbarColor" role="menu">
                 {{#each colors}}
-                    <li role="presentation"><button type="button" class="btn btn-default btn-sm color-item" data-background="{{this}}" data-color="{{@key}}" style="background-color:rgb({{this}});"></li>
+                    <li role="presentation">
+                        <button type="button" class="btn btn-default btn-sm color-item" data-background="{{this}}" data-color="{{@key}}" style="background-color:rgb({{this}});">
+                    </li>
                 {{/each}}
             </ul>
         </div>
